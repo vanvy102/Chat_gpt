@@ -34,7 +34,7 @@ with st.container():
     # Hàng 2: Tab và bảng trống
     with column1:
         # Tạo tab cho các mã chứng khoán
-        selected_stock = st.selectbox("Chọn mã chứng khoán",['A','B','C'])
+        selected_stock = st.selectbox("Chọn mã chứng khoán",ticket)
     with column2:
         #tao ban tom tat
         container1=st.container()
