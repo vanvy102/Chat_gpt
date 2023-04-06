@@ -16,7 +16,7 @@ from streamlit_chat import message
 #     )
 #     response_text = response.choices[0].text
 #     return response_text
-ticket=[]
+ticket=['...']
 with open('MaNH.txt','r') as f:
     h=f.read()
     h=h.splitlines()
