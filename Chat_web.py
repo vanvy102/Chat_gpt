@@ -16,7 +16,12 @@ from streamlit_chat import message
 #     )
 #     response_text = response.choices[0].text
 #     return response_text
-ticket=cf.get_ticket()
+ticket=[]
+with open('MaNH.txt','r') as f:
+    h=f.read()
+    h=h.splitlines()
+    for i in h:
+        ticket.append(i)
 # #Container1:
 with st.container():
    st.markdown("<h1 style='text-align: center; color: grey;'>SMART TRADING GPT</h1>", unsafe_allow_html=True)
