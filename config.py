@@ -1,25 +1,31 @@
 from vnstock import*
-API_KEY="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"
+import requests
+import json
+API_KEY="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"
 model="text-davinci-003"
 #ham lay ma ngan hang
 def get_ticket():
-    cp=listing_companies()
-    check='ngân hàng thương mại cổ phần'
-    ticket=[]
-    for n in range(len(cp)):
-        if check in cp.loc[n][2].lower():
-            ticket.append(cp.loc[n][0])
+   ticket=[]
+   with open('MaNH.txt','r') as f:
+    h=f.read()
+    h=h.splitlines()
+    for i in h:
+        ticket.append(i)
     return ticket
 def get_name_cp():
-    cp=listing_companies()
+    with open('f.json','r',encoding="utf8") as gf:
+        h=json.load(gf)
+    df = pd.DataFrame(h['items']).drop(columns=['organCode', 'icbCode', 'organTypeCode', 'comTypeCode']).rename(columns={'comGroupCode': 'group_code', 'organName': 'company_name', 'organShortName':'company_short_name'})
     check='ngân hàng thương mại cổ phần'
     nh=[]
-    for n in range(len(cp)):
-        if check in cp.loc[n][2].lower():
-            nh.append(cp.loc[n][2])
+    for n in range(len(df)):
+        if check in df.loc[n][2].lower():
+            nh.append(df.loc[n][2])
     return nh
 def get_trade_code():
-    cp=listing_companies()
+    with open('f.json','r',encoding="utf8") as gf:
+        h=json.load(gf)
+    cp = pd.DataFrame(h['items']).drop(columns=['organCode', 'icbCode', 'organTypeCode', 'comTypeCode']).rename(columns={'comGroupCode': 'group_code', 'organName': 'company_name', 'organShortName':'company_short_name'})
     check='ngân hàng thương mại cổ phần'
     code=[]
     index=['upcom','hose']
