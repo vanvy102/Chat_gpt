@@ -24,4 +24,4 @@ for ti in ticket :
     df = stock_historical_data(symbol=ti, 
                             start_date=start_time, 
                             end_date=end_time)
-    st.write(f"{df.loc['Open']}")
+    st.write(f"{df}")
