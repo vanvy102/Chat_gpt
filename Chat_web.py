@@ -4,7 +4,8 @@ import config
 import time
 from streamlit_chat import message
 # Cài đặt thông tin model
-openai.api_key=config.API_KEY
+api_gpt=st.secrets["api_GPT"]
+openai.api_key=api_gpt
 #Hàm để gọi đến OpenAPI / Phần ChatGPT
 def get_response_from_chatgpt(user_question):
     response = openai.Completion.create(
