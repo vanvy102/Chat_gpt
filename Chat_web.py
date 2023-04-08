@@ -10,7 +10,7 @@ def get_response_from_chatgpt(user_question):
     response = openai.Completion.create(
         engine= config.model,
         prompt = user_question,
-        max_tokens = 4000,
+        max_tokens = 2500,
         n = 1,
         temperature = 0.5
     )
