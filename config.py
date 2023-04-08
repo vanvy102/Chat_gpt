@@ -1,7 +1,7 @@
 from vnstock import*
 import requests
 import json
-API_KEY="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"
+API_KEY="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"
 model="text-davinci-003"
 #ham lay ma ngan hang
 def get_ticket():
