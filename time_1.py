@@ -3,6 +3,7 @@ import pandas as pd
 import os 
 import datetime
 import config as cf
+import streamlit as st
 #lay moc thoi gian giao dich trong 30 ngay
 current_time= datetime.date.today()
 thirty_days_ago= current_time+ datetime.timedelta(-30)
