@@ -5,4 +5,3 @@ numpy
 pandas
 bs4
 vnstock
-setuptools
