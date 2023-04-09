@@ -62,7 +62,7 @@ with st.container():
             summary=get_response_from_chatgpt(data[0])
             container1.write(f"{summary}")
             user_question = container3.text_input("Nhập câu hỏi vào đây:")          
-            if container3.button("Chat với em đi")or user_question:
+            if container3.button("Submit")or user_question:
                 response_text = get_response_from_chatgpt(user_question)
                 st.session_state.bot.append(response_text)
                 st.session_state.user.append(user_question)
