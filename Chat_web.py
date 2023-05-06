@@ -2,7 +2,9 @@ import streamlit as st
 import openai
 import config
 import time
+import linear
 from streamlit_chat import message
+import crawl_link as cr
 # Cài đặt thông tin model
 api_gpt=st.secrets["api_GPT"]
 openai.api_key=api_gpt
@@ -11,7 +13,7 @@ def get_response_from_chatgpt(user_question):
     response = openai.Completion.create(
         engine= config.model,
         prompt = user_question,
-        max_tokens = 2500,
+        max_tokens = 3000,
         n = 1,
         temperature = 0.5
     )
@@ -48,21 +50,23 @@ with st.container():
             container1=st.container()
             container2=st.container()
             container3=st.container()
+            #du lieu du doan
+            ln= linear.linear_data(selected_stock)
             #tao thu vien chat
             if 'bot' not in st.session_state:
                 st.session_state['bot']=[]
             if 'user' not in st.session_state:
                 st.session_state['user']=[]
             smr='tóm tắt bài viết '
-            fi='./file/'+selected_stock+'.txt'
-            with open(fi,'r') as fp:
-                sd=fp.readlines()
-            data=[smr+line.rstrip('\n') for line in sd]
-            st.markdown('####')
+            data=cr.get_link_cafef(selected_stock)
+            Y_train=linear.linear_data(selected_stock)
             summary=get_response_from_chatgpt(data[0])
-            container1.write(f"{summary}")
+            summary1=get_response_from_chatgpt(data[1])
+            summary2=get_response_from_chatgpt(data[2])
+            total_sum=get_response_from_chatgpt('Kết hợp ba bài viết trên thành một bài viết tóm tắt')
+            container1.write(f"{total_sum}")
             user_question = container3.text_input("Nhập câu hỏi vào đây:")          
-            if container3.button("Submit")or user_question:
+            if container3.button("Chat với em đi")or user_question:
                 response_text = get_response_from_chatgpt(user_question)
                 st.session_state.bot.append(response_text)
                 st.session_state.user.append(user_question)
@@ -75,4 +79,5 @@ with st.container():
                             with st.spinner('Đang xử lý...'):
                                 time.sleep(1)
                         message(st.session_state['bot'][i], key=str(i))    
+     
     
