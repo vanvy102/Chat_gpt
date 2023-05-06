@@ -7,6 +7,7 @@ import os
 import datetime
 import random
 from sklearn.linear_model import LinearRegression
+model="text-davinci-003"
 #ham lay ma ngan hang
 def get_ticket():
    ticket=[]
