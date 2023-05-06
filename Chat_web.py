@@ -11,7 +11,7 @@ openai.api_key=api_gpt
 #Hàm để gọi đến OpenAPI / Phần ChatGPT
 def get_response_from_chatgpt(user_question):
     response = openai.Completion.create(
-        engine= config.model,
+        engine= "text-davinci-003",
         prompt = user_question,
         max_tokens = 3000,
         n = 1,
