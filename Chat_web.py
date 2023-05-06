@@ -51,7 +51,6 @@ with st.container():
             container2=st.container()
             container3=st.container()
             #du lieu du doan
-            ln= linear.linear_data(selected_stock)
             #tao thu vien chat
             if 'bot' not in st.session_state:
                 st.session_state['bot']=[]
