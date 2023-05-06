@@ -36,4 +36,3 @@ def get_link_cafef(ticker):
             k=header+ u
             webs.append(k)
         return webs
-w=get_link_cafef('ACB')
