@@ -20,19 +20,20 @@ def get_link_cafef(ticker):
     code=cf.get_trade_code()
 
     for i in range(len(ticket)):
-        URL=header+'/'+code[i]+'/'+ticket[i]+'-'+kd[i]+'.chn'
-        resp=requests.get(url=URL)
+        if ticket[i]==ticker:
+            URL=header+'/'+code[i]+'/'+ticket[i]+'-'+kd[i]+'.chn'
+            resp=requests.get(url=URL)
     #định dạng web
-        soup=BeautifulSoup(resp.content,"html.parser")
+            soup=BeautifulSoup(resp.content,"html.parser")
     #tìm đến vị trí có chứa URL
-        link=soup.find('ul',attrs={'class':'tlist'})
-        crawl_link=link.find_all('a')
-        URLS=[]
-        for links in crawl_link:
-            URLS.append(links['href'])
-        webs=[]
+            link=soup.find('ul',attrs={'class':'tlist'})
+            crawl_link=link.find_all('a')
+            URLS=[]
+            for links in crawl_link:
+                URLS.append(links['href'])
+            webs=[]
     #các bài đường dẫn liên quan.
-        for u in URLS:
-            k=header+ u
-            webs.append(k)
-        return webs
+            for u in URLS:
+                k=header+ u
+                webs.append(k)
+            return webs
