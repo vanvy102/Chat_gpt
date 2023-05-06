@@ -47,4 +47,3 @@ def linear_data(ticket):
     y_new = model.predict(x_new)
     #print('Predicted value:', y_new)
     return [y_new[0],y_mean]
-j=linear_data('ACB')
