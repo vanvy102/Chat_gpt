@@ -3,6 +3,7 @@ import openai
 import config
 import datetime
 import linear
+import time
 from streamlit_chat import message
 import crawl_link as cr
 # Cài đặt thông tin model
