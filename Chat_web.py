@@ -68,7 +68,7 @@ with st.container():
             st.session_state['user']=[]
         with container3:
             q1="với những thông tin đó thì mã ngân hàng "+selected_stock+" và giá của mã này là "+str(Y_train[0])+" có những rủi ro về mặt đầu tư nào?"
-            q2='dựa vào những thông tin gì liên quan đến ngân hàng'+ selected_stock+ ' để bạn có thể đưa ra các rủi ro như vậy?'
+            q2='dựa vào những thông tin gì về thị trường, nhà nước, lĩnh vực liên quan đến ngân hàng '+ selected_stock+ ' để bạn có thể đưa ra các rủi ro như vậy?'
             q3="với những thông tin và giá mở phiên "+ str(Y_train[0]) +" thì mã cổ phiếu "+ selected_stock+" có ưu thế gì?"
             q4= "dựa vào những thông tin nào của nhà nước, thị trường và mã ngân hàng "+selected_stock+" để bạn có thể đưa ra được những ưu thế như vậy?"
             q5="Mã ngân hàng "+selected_stock+" có những chính sách tích cực, khả quan trong năm 2023 để giúp cho tình hình tài chính của ngân hàng phát triển tốt hơn không?"
