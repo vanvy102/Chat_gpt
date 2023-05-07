@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import os 
 import datetime
+import time
 import random
 from sklearn.linear_model import LinearRegression
 model="text-davinci-003"
