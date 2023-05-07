@@ -5,6 +5,7 @@ import csv
 from vnstock import*
 import config as cf
 import random
+import get_set_data as gsd
 def linear_data(ticket,token, shift):
     data=[]
     df=cf.get_data_bank(ticket)
