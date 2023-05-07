@@ -66,7 +66,7 @@ with st.container():
             st.session_state['bot']=[]
         if 'user' not in st.session_state:
             st.session_state['user']=[]
-         with container3:
+        with container3:
             q1="với những thông tin đó thì mã ngân hàng "+selected_stock+" và giá của mã này là "+str(Y_train[0])+" có những rủi ro về mặt đầu tư nào?"
             q2="với những thông tin và giá mở phiên "+ str(Y_train[0]) +" thì mã cổ phiếu "+ selected_stock+" có ưu thế gì?"
             q4= "dựa vào những thông tin nào của nhà nước, thị trường và mã ngân hàng "+selected_stock+" để bạn có thể đưa ra được những ưu thế như vậy?"
