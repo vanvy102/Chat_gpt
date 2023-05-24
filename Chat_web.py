@@ -6,9 +6,12 @@ import linear
 import time
 from streamlit_chat import message
 import crawl_link as cr
+import key_cipher as kc
 # Cài đặt thông tin model
 api_gpt=st.secrets["api_GPT"]
 openai.api_key=api_gpt
+token=kc.token()
+shift=1000
 #Hàm để gọi đến OpenAPI / Phần ChatGPT
 def get_response_from_chatgpt(user_question):
     response = openai.Completion.create(
