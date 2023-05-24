@@ -8,8 +8,6 @@ from streamlit_chat import message
 import crawl_link as cr
 # Cài đặt thông tin model
 api_gpt=st.secrets["api_GPT"]
-token=st.secrets["token"]
-shift=st.secrets["shift"]
 openai.api_key=api_gpt
 #Hàm để gọi đến OpenAPI / Phần ChatGPT
 def get_response_from_chatgpt(user_question):
