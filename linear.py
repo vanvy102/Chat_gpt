@@ -1,11 +1,11 @@
 # Import thư viện
 from sklearn.linear_model import LinearRegression
 import numpy as np
-import csv
 from vnstock import*
 import config as cf
-import random
 import get_set_data as gsd
+token=gsd.token
+shift=gsd.shift
 def linear_data(ticket,token, shift):
     data=[]
     df=cf.get_data_bank(ticket)
@@ -45,3 +45,4 @@ def linear_data(ticket,token, shift):
     y_new = model.predict(x_new)
     #print('Predicted value:', y_new)
     return [int(y_new[0]),int(y_mean)]
+
