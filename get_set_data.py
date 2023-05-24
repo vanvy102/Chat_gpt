@@ -1,9 +1,10 @@
-import config as cf
 import json
 import requests
 import urllib.parse
 import http.client
-import random
+import key_cipher as kc
+token=kc.token()
+shift = 1000
 URL_get='http://external.phuocthienpharma.net/v1/get-data'
 URL_post='http://external.phuocthienpharma.net/v1/save-data'
 
@@ -89,3 +90,4 @@ def set_data(data,token,shift):
 #             }
 #     data=[myObj]
 #     set_data(data,token,shift)
+
