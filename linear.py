@@ -24,8 +24,8 @@ def linear_data(ticket,token, shift):
     K=[]
     h=[]
     for i in range(len(data)):
-        K.append([int(data[i][1]),int(data[i][2])])
-        h.append(int(data[i][0]))
+        K.append([int(data[i][2]),int(data[i][3])])
+        h.append(int(data[i][1]))
     # Tạo mô hình hồi quy tuyến tính
     model = LinearRegression()
     x_mean=np.mean(K,axis=0)
