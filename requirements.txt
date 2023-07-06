@@ -1,7 +1,7 @@
 openai==0.26.5
 streamlit-chat==0.0.2.2
 requests
-streamlit
+streamlit==0.81.0
 numpy
 pandas
 bs4
@@ -9,4 +9,4 @@ vnstock
 scikit-learn
 unidecode
 pycryptodome
-Crypto
+
