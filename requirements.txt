@@ -1,7 +1,6 @@
 openai==0.26.5
 streamlit-chat==0.0.2.2
 requests
-datetime
 streamlit
 numpy
 pandas
